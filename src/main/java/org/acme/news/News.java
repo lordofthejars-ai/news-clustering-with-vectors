@@ -1,4 +1,4 @@
 package org.acme.news;
 
-public record News(String title, String url) {
+public record News(String title) {
 }
