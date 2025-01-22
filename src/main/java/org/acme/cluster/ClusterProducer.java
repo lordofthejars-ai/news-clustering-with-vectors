@@ -8,8 +8,8 @@ import org.apache.commons.math3.ml.clustering.DBSCANClusterer;
 @ApplicationScoped
 public class ClusterProducer {
 
-    private static final double MAXIMUM_NEIGHBORHOOD_RADIUS = 0.5;
-    private static final int MINIMUM_POINTS_PER_CLUSTER = 10;
+    private static final double MAXIMUM_NEIGHBORHOOD_RADIUS = 0.9;
+    private static final int MINIMUM_POINTS_PER_CLUSTER = 6;
 
     @Produces
     Clusterer<ClusterableEmbeddedMessage> createCluster() {
