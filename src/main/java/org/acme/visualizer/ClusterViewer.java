@@ -1,4 +1,4 @@
-package org.acme.ai;
+package org.acme.visualizer;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.acme.cluster.ClusterableEmbeddedMessage;
@@ -27,15 +27,14 @@ public class ClusterViewer {
                     .map(ClusterableEmbeddedMessage::getPoint)
                     .toArray(double[][]::new);
 
-            TSNE tsne = new TSNE(points, 3, 30, 200, 1000);
+            TSNE tsne = new TSNE(points, 2, 60, 600, 3000);
             double[][] reducedData = tsne.coordinates;
             Point p = Point.of(reducedData, getColor(i, numberOfClusters));
             pointsList.add(p);
         }
 
 
-        var canvas = new ScatterPlot(pointsList.toArray(new Point[0])).canvas();
-        canvas.window();
+
 
     }
 

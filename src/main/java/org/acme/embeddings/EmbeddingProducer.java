@@ -37,7 +37,7 @@ public class EmbeddingProducer {
     EmbeddingModel create() {
         //EmbeddingModel embeddingModel = new OnnxEmbeddingModel(modelPath, tokenizerPath, PoolingMode.MEAN);
         EmbeddingModel embeddingModel = new AllMiniLmL6V2EmbeddingModel();
-        //logger.infof("Model %s with dimension %d.", modelPath.getFileName(), embeddingModel.dimension());
+        logger.infof("Model AllMiniLmL6V2EmbeddingModel with dimension %d.", embeddingModel.dimension());
 
         return embeddingModel;
     }

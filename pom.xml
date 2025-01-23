@@ -50,6 +50,10 @@
             <artifactId>quarkus-rest</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.quarkiverse.qute.web</groupId>
+            <artifactId>quarkus-qute-web</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.github.haifengl</groupId>
             <artifactId>smile-core</artifactId>
             <version>4.1.0</version>
@@ -58,6 +62,11 @@
             <groupId>com.github.haifengl</groupId>
             <artifactId>smile-plot</artifactId>
             <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.hansolo.fx</groupId>
+            <artifactId>charts</artifactId>
+            <version>21.0.11</version>
         </dependency>
         <dependency>
             <groupId>dev.langchain4j</groupId>
@@ -69,7 +78,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
-            <artifactId>quarkus-langchain4j-jlama</artifactId>
+            <artifactId>quarkus-langchain4j-openai</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -129,6 +138,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
                 <configuration>
+                    <argLine>
+                        --enable-preview
+                        --add-modules jdk.incubator.vector
+                    </argLine>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <maven.home>${maven.home}</maven.home>
